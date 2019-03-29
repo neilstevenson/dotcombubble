@@ -1,0 +1,25 @@
+hazelcast:
+  group:
+    name: 'dotcom'
+  management-center:
+    enabled: true
+    url: 'http://localhost:8080/hazelcast-mancenter'
+  network:
+    join:
+      multicast:
+        enabled: false
+      tcp-ip:
+        enabled: true
+        member-list:
+          - 127.0.0.1:5701
+
+server:
+  port: 8081
+
+spring:
+  application.name: ${hazelcast.group.name}
+
+          
+logging:
+  level:
+    org.springframework: ERROR
